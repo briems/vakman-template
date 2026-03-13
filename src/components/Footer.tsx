@@ -1,10 +1,11 @@
 import { klantConfig } from "@/config/klant";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   const jaar = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-10">
+    <footer className="bg-gray-900 text-gray-400 py-10 pb-20 sm:pb-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
@@ -17,26 +18,26 @@ export default function Footer() {
             <h3 className="text-white font-bold text-lg mb-3">Contact</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                Tel:{" "}
-                <a href={`tel:${klantConfig.telefoonnummer}`} className="hover:text-white transition">
+                <a href={`tel:${klantConfig.telefoonnummer}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Phone className="h-4 w-4" />
                   {klantConfig.telefoonnummer}
                 </a>
               </li>
               <li>
-                E-mail:{" "}
-                <a href={`mailto:${klantConfig.email}`} className="hover:text-white transition">
+                <a href={`mailto:${klantConfig.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Mail className="h-4 w-4" />
                   {klantConfig.email}
                 </a>
               </li>
               <li>
-                WhatsApp:{" "}
                 <a
                   href={`https://wa.me/${klantConfig.whatsappNummer}`}
-                  className="hover:text-white transition"
+                  className="flex items-center gap-2 hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Stuur bericht
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
                 </a>
               </li>
             </ul>

@@ -5,6 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --vakman-primary: #E67E00;
+  --vakman-primary-dark: #C56A00;
   --primary: oklch(0.205 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -46,6 +48,47 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Hero pulse animation on call button */
+.hero-pulse-btn {
+  position: relative;
+}
+.hero-pulse-btn::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 12px;
+  background: var(--vakman-primary);
+  opacity: 0;
+  animation: hero-pulse 2s ease-in-out infinite;
+}
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.05); }
+}
+
+/* Falling water drops */
+.hero-drop {
+  animation: drop-fall 6s ease-in infinite;
+}
+@keyframes drop-fall {
+  0% { top: -5%; opacity: 0; }
+  10% { opacity: 0.08; }
+  90% { opacity: 0.04; }
+  100% { top: 105%; opacity: 0; }
+}
+
+/* Subtle pipe SVG float */
+.hero-pipe {
+  animation: pipe-float 8s ease-in-out infinite;
+}
+.hero-pipe-2 {
+  animation: pipe-float 10s ease-in-out infinite reverse;
+}
+@keyframes pipe-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
 }
 
 .dark {

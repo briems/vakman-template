@@ -2,11 +2,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Diensten from "@/components/Diensten";
 import WaaromWij from "@/components/WaaromWij";
+import Projecten from "@/components/Projecten";
 import Werkgebied from "@/components/Werkgebied";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
+import SpoedCTA from "@/components/SpoedCTA";
 import Footer from "@/components/Footer";
 import StickyBelKnop from "@/components/StickyBelKnop";
+import WhatsAppKnop from "@/components/WhatsAppKnop";
 
 export default function Home() {
   return (
@@ -16,12 +19,15 @@ export default function Home() {
         <Hero />
         <Diensten />
         <WaaromWij />
+        <Projecten />
         <Werkgebied />
         <Reviews />
         <Contact />
+        <SpoedCTA />
       </main>
       <Footer />
       <StickyBelKnop />
+      <WhatsAppKnop />
     </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { klantConfig } from "@/config/klant";
 import { useState } from "react";
+import { Send, Phone, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -44,9 +45,16 @@ export default function Contact() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Contact opnemen
             </h2>
-            <p className="text-gray-600 text-lg">
-              Vul het formulier in voor een gratis offerte. Wij reageren binnen 24 uur.
+            <p className="text-gray-600 text-lg mb-4">
+              Vul het formulier in voor een gratis offerte.
             </p>
+            <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2 text-sm text-green-800 font-medium">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+              </span>
+              Gemiddeld binnen 23 minuten reactie
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -59,7 +67,7 @@ export default function Contact() {
                 id="naam"
                 name="naam"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary] focus:border-transparent text-gray-900"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--vakman-primary)] focus:border-transparent text-gray-900"
                 placeholder="Uw volledige naam"
               />
             </div>
@@ -74,7 +82,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary] focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--vakman-primary)] focus:border-transparent text-gray-900"
                   placeholder="uw@email.nl"
                 />
               </div>
@@ -86,7 +94,7 @@ export default function Contact() {
                   type="tel"
                   id="telefoon"
                   name="telefoon"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary] focus:border-transparent text-gray-900"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--vakman-primary)] focus:border-transparent text-gray-900"
                   placeholder="06-12345678"
                 />
               </div>
@@ -101,7 +109,7 @@ export default function Contact() {
                 name="bericht"
                 required
                 rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[--primary] focus:border-transparent resize-none text-gray-900"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--vakman-primary)] focus:border-transparent resize-none text-gray-900"
                 placeholder="Beschrijf uw situatie of klus..."
               />
             </div>
@@ -109,37 +117,39 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full bg-[--primary] text-white py-4 rounded-md font-bold text-lg hover:opacity-90 transition disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 bg-[var(--vakman-primary)] text-white py-4 rounded-lg font-bold text-lg hover:bg-[var(--vakman-primary-dark)] transition-colors disabled:opacity-50"
             >
+              <Send className="h-5 w-5" />
               {status === "loading" ? "Verzenden..." : "Verstuur bericht"}
             </button>
 
             {status === "success" && (
-              <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-md text-center">
+              <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center">
                 Bedankt! Uw bericht is verstuurd. Wij nemen zo snel mogelijk contact met u op.
               </div>
             )}
 
             {status === "error" && (
-              <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-md text-center">
+              <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
                 Er is iets misgegaan. Probeer het opnieuw of bel ons op {klantConfig.telefoonnummer}.
               </div>
             )}
           </form>
 
-          <div className="mt-8 text-center text-gray-500 text-sm">
-            Of bel direct:{" "}
-            <a href={`tel:${klantConfig.telefoonnummer}`} className="text-[--primary] font-semibold">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-500">
+            <a href={`tel:${klantConfig.telefoonnummer}`} className="flex items-center gap-2 text-[var(--vakman-primary)] font-semibold hover:underline">
+              <Phone className="h-4 w-4" />
               {klantConfig.telefoonnummer}
-            </a>{" "}
-            | WhatsApp:{" "}
+            </a>
+            <span className="hidden sm:inline text-gray-300">|</span>
             <a
               href={`https://wa.me/${klantConfig.whatsappNummer}`}
-              className="text-[--primary] font-semibold"
+              className="flex items-center gap-2 text-[var(--vakman-primary)] font-semibold hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Stuur een bericht
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp bericht
             </a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { klantConfig } from "@/config/klant";
+import { MapPin } from "lucide-react";
 
 export default function Werkgebied() {
   return (
@@ -12,12 +13,9 @@ export default function Werkgebied() {
             {klantConfig.bedrijfsnaam} is actief in <strong>{klantConfig.werkgebied}</strong>.
             Wij komen snel bij u langs, vaak nog dezelfde dag.
           </p>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 md:p-8">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[--primary]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
+              <MapPin className="h-8 w-8 text-[var(--vakman-primary)]" />
               <h3 className="text-2xl font-bold text-gray-900">{klantConfig.stad} e.o.</h3>
             </div>
             <p className="text-gray-600">
