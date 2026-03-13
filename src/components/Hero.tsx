@@ -94,7 +94,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center bg-gray-900 text-white overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center bg-gray-900 text-white overflow-hidden">
       <video
         autoPlay
         muted
@@ -106,45 +106,45 @@ export default function Hero() {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-gray-900/90 via-gray-900/75 to-gray-900/50 md:from-gray-900/80 md:via-gray-900/60 md:to-transparent" />
 
       <WaterDrops />
 
-      <div className="relative max-w-6xl mx-auto px-4 py-16 md:py-28 w-full">
+      <div className="relative max-w-6xl mx-auto px-4 py-12 md:py-28 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block bg-[var(--vakman-primary)] text-white text-xs md:text-sm font-semibold px-3 md:px-4 py-1.5 rounded-full mb-4 md:mb-6 tracking-wide uppercase">
               {klantConfig.jarenlange_ervaring} jaar ervaring in {klantConfig.stad}
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-4 md:mb-6">
+            <h1 className="text-[1.75rem] md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-3 md:mb-6">
               {klantConfig.tagline}
             </h1>
 
-            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-10 leading-relaxed">
+            <p className="text-sm md:text-xl text-gray-300 mb-5 md:mb-10 leading-relaxed">
               {klantConfig.bedrijfsnaam} is uw betrouwbare loodgieter in{" "}
               {klantConfig.stad}. Persoonlijke aanpak, eerlijke prijzen en
               vakmanschap waar u op kunt rekenen.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-5 md:mb-10">
               <a
                 href={`tel:${klantConfig.telefoonnummer}`}
-                className="hero-pulse-btn inline-flex items-center justify-center gap-2 bg-[var(--vakman-primary)] text-white px-6 md:px-8 py-3.5 md:py-4 rounded-lg text-base md:text-lg font-bold hover:bg-[var(--vakman-primary-dark)] transition-colors"
+                className="hero-pulse-btn inline-flex items-center justify-center gap-2 bg-[var(--vakman-primary)] text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-bold hover:bg-[var(--vakman-primary-dark)] transition-colors"
               >
                 <Phone className="h-5 w-5" />
                 Bel nu direct
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 md:px-8 py-3.5 md:py-4 rounded-lg text-base md:text-lg font-bold hover:bg-white/20 transition-colors border border-white/20"
+                className="hidden sm:inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-bold hover:bg-white/20 transition-colors border border-white/20"
               >
                 Gratis offerte aanvragen
                 <ArrowRight className="h-5 w-5" />
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2 md:gap-4">
+            <div className="hidden sm:flex flex-wrap items-center gap-2 md:gap-4">
               {trustBadges.map((badge, i) => (
                 <div
                   key={i}

@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a
           href="#"
-          className={`text-xl font-bold transition-colors ${
+          className={`text-base md:text-xl font-bold transition-colors whitespace-nowrap ${
             scrolled ? "text-white" : "text-gray-900"
           }`}
         >
