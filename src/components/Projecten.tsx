@@ -16,7 +16,7 @@ export default function Projecten() {
       : klantConfig.projecten.filter((p) => p.categorie === filter);
 
   return (
-    <section id="projecten" className="py-16 md:py-24 bg-gray-950 text-white">
+    <section id="projecten" className="py-20 md:py-24 bg-gray-950 text-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

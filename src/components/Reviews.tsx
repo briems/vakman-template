@@ -128,7 +128,7 @@ export default function Reviews() {
   const { ref, visible } = useSlideIn();
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-gray-50">
+    <section id="reviews" className="py-20 md:py-24 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

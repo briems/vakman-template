@@ -59,21 +59,10 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="md:hidden flex items-center gap-3">
-          <a
-            href={`tel:${klantConfig.telefoonnummer}`}
-            className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-              scrolled
-                ? "bg-white text-[var(--vakman-primary)]"
-                : "bg-[var(--vakman-primary)] text-white"
-            }`}
-          >
-            <Phone className="h-4 w-4" />
-            {scrolled ? "Gratis advies" : "Bel nu"}
-          </a>
+        <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`p-1 transition-colors ${scrolled ? "text-white" : "text-gray-700"}`}
+            className={`p-1.5 transition-colors ${scrolled ? "text-white" : "text-gray-700"}`}
           >
             {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>

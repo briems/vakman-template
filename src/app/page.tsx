@@ -9,7 +9,6 @@ import Contact from "@/components/Contact";
 import SpoedCTA from "@/components/SpoedCTA";
 import Footer from "@/components/Footer";
 import StickyBelKnop from "@/components/StickyBelKnop";
-import WhatsAppKnop from "@/components/WhatsAppKnop";
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
       </main>
       <Footer />
       <StickyBelKnop />
-      <WhatsAppKnop />
     </>
   );
 }

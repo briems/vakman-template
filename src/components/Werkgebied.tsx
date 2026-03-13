@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 
 export default function Werkgebied() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-20 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

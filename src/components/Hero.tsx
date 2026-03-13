@@ -94,7 +94,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center bg-gray-900 text-white overflow-hidden">
+    <section id="hero" className="relative min-h-[80vh] md:min-h-[90vh] flex items-center bg-gray-900 text-white overflow-hidden">
       <video
         autoPlay
         muted
