@@ -52,9 +52,9 @@ export const klantConfig = {
       quote: "Binnen een paar uur was de lekkage gevonden en gerepareerd. Top service!",
       klantNaam: "Fam. de Groot",
       voorAfbeelding:
-        "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1727396561341-91711b49f1fe?q=80&w=1400&auto=format&fit=crop",
       naAfbeelding:
-        "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1580313356744-6ac9eeb8ae7e?q=80&w=1400&auto=format&fit=crop",
     },
     {
       titel: "Moderne badkamer installatie",
@@ -64,9 +64,9 @@ export const klantConfig = {
       quote: "Van oude badkamer naar een luxe wellness ruimte. Prachtig resultaat!",
       klantNaam: "M. Jansen",
       voorAfbeelding:
-        "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1650315534102-3ca1e51d41c5?q=80&w=1400&auto=format&fit=crop",
       naAfbeelding:
-        "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1613849925502-7b0f95cbdda0?q=80&w=1400&auto=format&fit=crop",
     },
     {
       titel: "CV-ketel vervanging",
@@ -76,9 +76,9 @@ export const klantConfig = {
       quote: "Nieuwe ketel geplaatst, nu eindelijk weer warm water. Snel en netjes.",
       klantNaam: "H. van Dijk",
       voorAfbeelding:
-        "https://images.unsplash.com/photo-1585128993280-9456c19c987d?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1618840626133-54463084a141?q=80&w=1400&auto=format&fit=crop",
       naAfbeelding:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1729986694893-facaf4bce2e6?q=80&w=1400&auto=format&fit=crop",
     },
     {
       titel: "Riool ontstopping restaurant",
@@ -88,9 +88,9 @@ export const klantConfig = {
       quote: "Spoedgeval op zaterdag, binnen een uur ter plaatse. Probleem snel opgelost.",
       klantNaam: "Restaurant De Buren",
       voorAfbeelding:
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1604762537426-c1f33f8c573b?q=80&w=1400&auto=format&fit=crop",
       naAfbeelding:
-        "https://images.unsplash.com/photo-1556909114-44e3e70034e2?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610276173132-c47d148ab626?q=80&w=1400&auto=format&fit=crop",
     },
     {
       titel: "Complete badkamer renovatie",
@@ -100,9 +100,9 @@ export const klantConfig = {
       quote: "Alles tot in de puntjes verzorgd. Communicatie was uitstekend.",
       klantNaam: "K. Vermeer",
       voorAfbeelding:
-        "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1542229336-fcba447980f9?q=80&w=1400&auto=format&fit=crop",
       naAfbeelding:
-        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1400&auto=format&fit=crop",
     },
   ],
   reviews: [
