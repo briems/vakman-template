@@ -1,5 +1,6 @@
 import { klantConfig } from "@/config/klant";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#diensten", label: "Diensten" },
@@ -19,11 +20,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 bg-[var(--vakman-primary)] rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
-                  {klantConfig.bedrijfsnaam.charAt(0)}
-                </span>
-              </div>
+              <Image
+                src="/images/logo-icon.png"
+                alt={`${klantConfig.bedrijfsnaam} logo`}
+                width={40}
+                height={40}
+                className="rounded-xl"
+              />
               <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
                 {klantConfig.bedrijfsnaam}
               </span>

@@ -3,6 +3,7 @@
 import { klantConfig } from "@/config/klant";
 import { Phone, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const navLinks = [
   { id: "diensten", label: "Diensten" },
@@ -34,11 +35,14 @@ export default function Navbar() {
           href="#"
           className="flex items-center gap-2.5 group"
         >
-          <div className="w-10 h-10 bg-[var(--vakman-primary)] rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-            <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
-              {klantConfig.bedrijfsnaam.charAt(0)}
-            </span>
-          </div>
+          <Image
+            src="/images/logo-icon.png"
+            alt={`${klantConfig.bedrijfsnaam} logo`}
+            width={40}
+            height={40}
+            className="rounded-xl transition-transform duration-300 group-hover:scale-105"
+            priority
+          />
           <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)] hidden sm:block">
             {klantConfig.bedrijfsnaam}
           </span>
