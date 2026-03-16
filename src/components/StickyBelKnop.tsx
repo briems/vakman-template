@@ -28,7 +28,7 @@ export default function StickyBelKnop() {
     >
       <a
         href={`tel:${klantConfig.telefoonnummer}`}
-        className="flex items-center justify-center gap-2 bg-[var(--vakman-primary)] text-white py-4 font-bold text-lg shadow-[0_-2px_10px_rgba(0,0,0,0.15)]"
+        className="flex items-center justify-center gap-2.5 bg-[var(--vakman-primary)] text-white py-4 font-bold text-lg shadow-[0_-4px_20px_rgba(0,0,0,0.15)] cursor-pointer"
       >
         <Phone className="h-5 w-5" />
         Bel nu: {klantConfig.telefoonnummer}

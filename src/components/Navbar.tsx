@@ -4,93 +4,103 @@ import { klantConfig } from "@/config/klant";
 import { Phone, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
+const navLinks = [
+  { id: "diensten", label: "Diensten" },
+  { id: "projecten", label: "Projecten" },
+  { id: "reviews", label: "Reviews" },
+  { id: "contact", label: "Contact" },
+];
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[var(--vakman-primary)] shadow-lg border-b border-orange-700"
-          : "bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100"
+          ? "bg-[var(--vakman-navy)]/95 backdrop-blur-md shadow-xl py-2"
+          : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <a
           href="#"
-          className={`text-base md:text-xl font-bold transition-colors whitespace-nowrap ${
-            scrolled ? "text-white" : "text-gray-900"
-          }`}
+          className="flex items-center gap-2.5 group"
         >
-          {klantConfig.bedrijfsnaam}
+          <div className="w-10 h-10 bg-[var(--vakman-primary)] rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)]">
+              {klantConfig.bedrijfsnaam.charAt(0)}
+            </span>
+          </div>
+          <span className="text-white font-bold text-lg font-[family-name:var(--font-heading)] hidden sm:block">
+            {klantConfig.bedrijfsnaam}
+          </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-6">
-          {["diensten", "projecten", "reviews", "contact"].map((id) => (
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map((link) => (
             <a
-              key={id}
-              href={`#${id}`}
-              className={`text-sm font-medium transition-colors capitalize ${
-                scrolled
-                  ? "text-white/80 hover:text-white"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
+              key={link.id}
+              href={`#${link.id}`}
+              className="text-white/70 hover:text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-white/10 transition-all duration-200"
             >
-              {id}
+              {link.label}
             </a>
           ))}
           <a
             href={`tel:${klantConfig.telefoonnummer}`}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-              scrolled
-                ? "bg-white text-[var(--vakman-primary)] hover:bg-gray-100"
-                : "bg-[var(--vakman-primary)] text-white hover:bg-[var(--vakman-primary-dark)]"
-            }`}
+            className="ml-4 flex items-center gap-2 bg-[var(--vakman-primary)] text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-[var(--vakman-primary-dark)] transition-colors duration-200 cursor-pointer"
           >
             <Phone className="h-4 w-4" />
-            {scrolled ? "Bel nu: gratis advies" : klantConfig.telefoonnummer}
+            <span className="hidden lg:inline">{klantConfig.telefoonnummer}</span>
+            <span className="lg:hidden">Bel ons</span>
           </a>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-3">
+          <a
+            href={`tel:${klantConfig.telefoonnummer}`}
+            className="flex items-center gap-2 bg-[var(--vakman-primary)] text-white px-4 py-2 rounded-lg text-sm font-bold cursor-pointer"
+          >
+            <Phone className="h-4 w-4" />
+            Bel nu
+          </a>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`p-1.5 transition-colors ${scrolled ? "text-white" : "text-gray-700"}`}
+            className="text-white p-2 cursor-pointer"
+            aria-label={menuOpen ? "Menu sluiten" : "Menu openen"}
           >
             {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <div
-          className={`md:hidden border-t px-4 py-4 space-y-3 ${
-            scrolled
-              ? "border-orange-700 bg-[var(--vakman-primary)]"
-              : "border-gray-100 bg-white"
-          }`}
-        >
-          {["diensten", "projecten", "reviews", "contact"].map((id) => (
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 bg-[var(--vakman-navy)]/98 backdrop-blur-xl border-t border-white/10 transition-all duration-300 ${
+          menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
+        <div className="px-4 py-4 space-y-1">
+          {navLinks.map((link) => (
             <a
-              key={id}
-              href={`#${id}`}
+              key={link.id}
+              href={`#${link.id}`}
               onClick={() => setMenuOpen(false)}
-              className={`block font-medium py-2 capitalize ${
-                scrolled ? "text-white/90" : "text-gray-700"
-              }`}
+              className="block text-white/80 hover:text-white font-medium py-3 px-4 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
             >
-              {id}
+              {link.label}
             </a>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }
