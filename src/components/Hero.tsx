@@ -50,7 +50,7 @@ const trustBadges = [
 
 const stats = [
   { waarde: 247, suffix: "+", label: "Tevreden klanten" },
-  { waarde: 19, suffix: "+", label: "Jaar ervaring" },
+  { waarde: 25, suffix: "+", label: "Jaar ervaring" },
   { waarde: 4.9, suffix: "", label: "Beoordeling", isStar: true },
 ];
 

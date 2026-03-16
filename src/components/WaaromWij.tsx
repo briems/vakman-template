@@ -20,7 +20,7 @@ const usps = [
   {
     icoon: <Award className="h-7 w-7" />,
     titel: `${klantConfig.jarenlange_ervaring} jaar ervaring`,
-    beschrijving: "Ruim 25 jaar ervaring in het vak. Gecertificeerde vakmensen die kwaliteit leveren.",
+    beschrijving: `Ruim ${klantConfig.jarenlange_ervaring} jaar ervaring in het vak. Gecertificeerde vakmensen die kwaliteit leveren.`,
     highlight: "Kiwa gecertificeerd",
   },
   {
