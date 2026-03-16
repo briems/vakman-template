@@ -63,20 +63,32 @@ const problemPoints = [
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center bg-[var(--vakman-navy)] text-white overflow-hidden">
-      {/* Video background */}
+      {/* Poster fallback image for mobile / slow connections */}
+      <img
+        src="/images/hero-fallback.jpg"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+        aria-hidden="true"
+      />
+
+      {/* Video background — hidden on mobile to save bandwidth */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-30"
+        poster="/images/hero-fallback.jpg"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
       >
         <source src="/hero-video.webm" type="video/webm" />
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--vakman-navy)]/80 via-[var(--vakman-navy)]/60 to-[var(--vakman-navy)]/90" />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-[var(--vakman-navy)]/60" />
+
+      {/* Gradient overlays for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--vakman-navy)]/40 via-transparent to-[var(--vakman-navy)]/80" />
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--vakman-navy)] to-transparent" />
 
       {/* Decorative accent */}
