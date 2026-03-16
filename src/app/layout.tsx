@@ -20,6 +20,16 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: `${klantConfig.bedrijfsnaam} | Vakman in ${klantConfig.stad}`,
   description: `${klantConfig.bedrijfsnaam} - Uw betrouwbare vakman in ${klantConfig.stad}. ${klantConfig.jarenlange_ervaring} jaar ervaring, gecertificeerd en 24/7 bereikbaar. Bel ${klantConfig.telefoonnummer}.`,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: `${klantConfig.bedrijfsnaam} | Vakman in ${klantConfig.stad}`,
     description: `Betrouwbare vakman met ${klantConfig.jarenlange_ervaring} jaar ervaring in ${klantConfig.werkgebied}.`,
